@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="沖縄県読谷村にある陶芸家の集中する地域で、沖縄の伝統工芸品「やちむん」の工房やショップ、ギャラリーなどが集まっています。">
+  <title>contact｜やちむんの里</title>
+
+  <!-- css -->
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="icon" href="images/favcon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="css/hamburger-menu.css">
+  <link rel="stylesheet" href="css/style.css">
+
+  <!-- script -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+  <script src="https://kit.fontawesome.com/5d50b4eb66.js" crossorigin="anonymous"></script>
+  <script src="js/smooth-scroll.js"></script>
+  <script src="js/hamburger-menu.js"></script>
+  <script src="js/scripts.js"></script>
+
+</head>
+
+<body id="contact">
+  <header class="inner">
+    <h1>
+      <a href="index.html"><img src="images/title.svg" alt="やちむんの里"></a>
+    </h1>
+    <nav>
+      <ul class="gnavi">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="workshop.html">Workshop</a></li>
+        <li><a href="access.html">Access</a></li>
+        <li class="current"><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+<!-- ハンバーガーメニュー -->
+<button class="hamburger-button"></button>
+
+<!-- ナビゲーション -->
+<nav class="hamburger-nav">
+  <ul class="gnavi">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="workshop.html">Workshop</a></li>
+    <li><a href="access.html">Access</a></li>
+    <li class="current"><a href="contact.html">Contact</a></li>
+  </ul>
+</nav>
+
+  <main>
+    <figure><img src="images/contact.jpg " alt="コンタクト"></figure>
+    <article>
+      <h2>お問い合わせ</h2>
+      <p>下記フォームに必要事項をご記入の上、送信をお願いいたします。<br>
+        土日祝日・年末年始などにいただいたお問い合せは翌営業日の受付けとなります。<br>
+        また、17:00を過ぎますと、翌日受付けになりますのでご了承ください。</p>
+    </article>
+    <div class="form">
+      <form method="post" action="mail.php">
+        <table>
+          <tr>
+            <th><label for="name">名前</label></th>
+            <td><input type="text" name="名前" id="name" required></td>
+          </tr>
+          <tr>
+            <th>
+              <labal>電話番号</labal>
+            </th>
+            <td><input type="tel" name="電話番号" id="name" required></td>
+          </tr>
+          <tr>
+            <th><label for="email">メールアドレス</label></th>
+            <td><input type="email" name="Email" id="email" required></td>
+          </tr>
+          <tr>
+            <th class="ms"><label for="area">メッセージ</label></th>
+            <td class="ms"><textarea name="メッセージ" id="area"></textarea></td>
+          </tr>
+        </table>
+        <div class="btn"><button>送信</button></div>
+        </from>
+    </div>
+  </main>
+  <footer>
+    <div class="f_box">
+      <div class="f_subbox">
+        <h1><a href="index.html"><img src="images/footerlogo.svg" alt="やちむんの里"></a></h1>
+        <nav>
+          <ul>
+            <li><a href="about.html">about</a></li>
+            <li><a href="workshop.html">workshop</a></li>
+            <li><a href="access.html">access</a></li>
+            <li><a href="contact.html">contact</a></li>
+          </ul>
+        </nav>
+      </div>
+      <div class="f_subbox">
+        <a href="https://www.vill.yomitan.okinawa.jp/"><img src="images/bn_yomitan.jpg" alt="読谷村"></a><a href="https://www.yomitan-kankou.jp/"><img src="images/bn_kankyo.jpg" alt="読谷村観光協会"></a><a href="https://www.tabi-yachimun.jp/"><img src="images/bn_tabito.jpg" alt="旅とヤチムン"></a>
+        <p><small>&copy;2014 YACHIMUN NO SATO. All Rights Reserved.</small></p>
+      </div>
+    </div>
+  </footer>
+  <p class="back-top scroll-fade"><a href="#top"><i class="fa-solid fa-angles-up"></i></a></p>
+</body>
+
+</html>

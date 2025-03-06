@@ -1,0 +1,944 @@
+@charset "utf-8";
+
+/* -------------------- 共通 -------------------- */
+
+body {
+  font-family: 'メイリオ', Meiryo, 'Hiragino Kaku Gothic ProN', 'ヒラギノ角ゴ ProN W3', sans-serif;
+  color: #43392F;
+  background-color: #FCFBF6;
+  font-size: 15px;
+  margin-top: 50px;
+  text-align: center;
+}
+
+
+/* ----- header ----- */
+.inner {
+  width: 1110px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+header {
+  font-size: 18px;
+  margin-bottom: 60px;
+  display: flex;
+  align-items: center;
+}
+
+header nav ul {
+  display: flex;
+  margin-left: 200px;
+  justify-content: space-around;
+}
+
+header nav ul li {
+  width: 122px;
+}
+
+header nav ul li a {
+  color: #43392F;
+  text-decoration: none;
+  position: relative;
+  overflow: hidden;
+}
+
+header nav ul li a:hover {
+  color: #D09B2D;
+}
+
+
+/* -- ハンバーガーメニュー -- */
+
+.hamburger-button {
+  display: none;
+}
+
+
+/*==================================================
+共通　横並びのための設定
+===================================*/
+
+
+.gnavi li a {
+  display: block;
+  padding: 10px 10px;
+  color: #43392F;
+}
+
+
+/*==================================================
+　5-3-5 左から右に背景が伸びる
+===================================*/
+
+/*背景の設定*/
+
+.gnavi li a {
+  /*背景色の基点とするためrelativeを指定*/
+  position: relative;
+}
+
+.gnavi li a::after {
+  content: '';
+  /*絶対配置で線の位置を決める*/
+  position: absolute;
+  z-index: -1;
+  bottom: 0;
+  left: 0;
+  /*背景の形状*/
+  width: 0;
+  height: 100%;
+  background: #43392F;
+  /*アニメーションの指定*/
+  transition: all .5s;
+  opacity: 0;
+  /*はじめは透過0*/
+}
+
+/*現在地とhoverの設定*/
+.gnavi li.current a::after,
+.gnavi li a:hover::after {
+  /*背景の形状*/
+  width: 100%;
+  /*横幅を伸ばす*/
+  opacity: 1;
+  /*不透明に*/
+}
+
+.gnavi li.current a,
+.gnavi li a:hover {
+  color: #FCFBF6;
+}
+
+
+
+/* ----- main ----- */
+
+main figure img {
+  border-radius: 0;
+  margin-bottom: 100px;
+}
+
+main img {
+  border-radius: 30px;
+}
+
+main section {
+  margin-bottom: 100px;
+  margin-left: 30px;
+  margin-right: 30px;
+}
+
+main section .box {
+  display: flex;
+  align-items: flex-start;
+}
+
+main section .sub_box h3 {
+  font-weight: normal;
+  font-size: 25px;
+  letter-spacing: 0.2em;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+main section .sub_box h4 {
+  font-size: 20px;
+  font-weight: normal;
+  text-align: left;
+  margin-top: 60px;
+  margin-bottom: 30px;
+}
+
+main section .sub_box p {
+  line-height: 40px;
+  text-align: justify;
+}
+
+main table tr td {
+  text-align: left;
+}
+
+
+/* --- パララックス --- */
+
+.left {
+  opacity: 0;
+  position: relative;
+  left: -200px;
+}
+
+.left.on {
+  opacity: 1;
+  left: 0;
+}
+
+.right {
+  opacity: 0;
+  position: relative;
+  right: -200px;
+}
+
+.right.on {
+  opacity: 1;
+  right: 0;
+}
+
+/* ----- article ----- */
+
+main article h2 {
+  font-size: 30px;
+  font-weight: normal;
+  letter-spacing: 0.2em;
+  margin-bottom: 60px;
+}
+
+main article p {
+  line-height: 40px;
+  margin-bottom: 60px;
+}
+
+main article img {
+  margin-bottom: 120px;
+}
+
+
+/* -----footer ----- */
+
+footer {
+  background-color: #43392F;
+  color: #FCFBF6;
+  padding-top: 60px;
+  padding-bottom: 60px;
+}
+
+footer h1 {
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+footer .f_box {
+  display: flex;
+  width: 1110px;
+  margin-left: auto;
+  margin-right: auto;
+  justify-content: space-between;
+}
+
+footer .f_subbox {
+  margin-left: 50px;
+}
+
+footer nav ul {
+  display: flex;
+}
+
+footer nav ul li {
+  line-height: 40px;
+  padding-right: 50px;
+}
+
+footer nav ul li a {
+  color: #FCFBF6;
+  text-decoration: none;
+}
+
+footer nav ul li a:hover {
+  color: #D09B2D;
+}
+
+footer .f_subbox:last-child {
+  margin-top: 30px;
+  margin-right: 50px;
+}
+
+footer .f_subbox p {
+  font-size: 13px;
+  padding-top: 25px;
+  text-align: right;
+}
+
+footer .f_subbox:last-child a {
+  margin-left: 10px;
+}
+
+
+/* --- スムーズスクロール --- */
+
+.back-top {
+  position: fixed;
+  bottom: 50px;
+  right: 50px;
+  display: none;
+  background-color: #D09B2D;
+  width: 50px;
+  line-height: 50px;
+  border-radius: 50px;
+  text-align: center;
+}
+
+.back-top a {
+  display: block;
+  color: #FCFBF6;
+  text-decoration: none;
+}
+
+
+
+
+
+/* -------------------- Home -------------------- */
+
+#home main .slider img {
+  border-radius: 60px;
+  margin-bottom: 100px;
+}
+
+#home main section .sub_box h2 {
+  font-weight: normal;
+  font-size: 25px;
+  margin-bottom: 30px;
+}
+
+#home main section .sub_box a {
+  color: #43392F;
+  letter-spacing: 0.3em;
+}
+
+#home main section .sub_box a:hover {
+  color: #D09B2D;
+}
+
+#home main section .sub_box {
+  margin-top: 30px;
+  margin-right: 30px;
+}
+
+#home main section:nth-child(3) .sub_box {
+  margin-right: 0;
+  margin-left: 30px;
+}
+
+#home main section .sub_box p {
+  margin-bottom: 40px;
+}
+
+#home main .wrap {
+  margin-bottom: 120px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+#home main .wrap img {
+  border-radius: 30px 30px 0 0;
+}
+
+#home main .wrapper {
+  width: 320px;
+}
+
+#home main .wrapper h3 {
+  color: #FCFBF6;
+  background-color: #43392F;
+  font-weight: normal;
+  font-size: 20px;
+  letter-spacing: 0.2em;
+  line-height: 100px;
+  border-radius: 0 0 30px 30px;
+  border: 2px solid #43392F;
+}
+
+#home main .wrapper h3:hover {
+  color: #43392F;
+  background-color: #FCFBF6;
+}
+
+#home main .wrap a {
+  text-decoration: none;
+}
+
+
+
+
+/*== 下線が伸びて背景に変わる　*/
+
+.btnlinestretches3 {
+  /*線の基点とするためrelativeを指定*/
+  position: relative;
+  /*ボタンの形状*/
+  color: #43392F;
+  padding: 10px 10px;
+  display: inline-block;
+  text-decoration: none;
+  outline: none;
+}
+
+/*テキストの設定*/
+.btnlinestretches3 span {
+  /*テキストを前面に出すためz-indexの値を高く設定*/
+  position: relative;
+  z-index: 2;
+}
+
+.btnlinestretches3:hover span {
+  color: #FCFBF6;
+}
+
+/*線の設定*/
+.btnlinestretches3::after {
+  content: '';
+  /*絶対配置で線の位置を決める*/
+  position: absolute;
+  z-index: 1;
+  bottom: 0;
+  left: 0;
+  /*線の形状*/
+  background: #43392F;
+  width: 100%;
+  height: 3px;
+  /*アニメーションの指定*/
+  transition: all 0.3s ease-in-out;
+}
+
+/*線が伸びて背景に*/
+.btnlinestretches3:hover::after {
+  height: 100%;
+
+}
+
+
+
+
+/* -------------------- About -------------------- */
+
+#about main section .box {
+  margin-left: 30px;
+  margin-right: 30px;
+}
+
+#about main section img {
+  margin-left: 30px;
+}
+
+#about main section .sub_box figure img {
+  border-radius: 30px;
+  margin-bottom: 30px;
+}
+
+#about main section .sub_box figure img:last-child {
+  margin-bottom: 0;
+}
+
+#about main section .sub_box span {
+  display: block;
+  text-align: center;
+  line-height: 100%;
+}
+
+#about main section {
+  margin-bottom: 120px;
+}
+
+
+
+
+
+
+/* -------------------- workshop -------------------- */
+
+#workshop main article h2 {
+  background-image: url(../images/work_h2.png);
+  color: #FCFBF6;
+  width: 1110px;
+  line-height: 100px;
+}
+
+#workshop main section {
+  width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 200px;
+}
+
+#workshop main section:last-child {
+  margin-bottom: 120px;
+}
+
+#workshop main section .sub_box h3 {
+  font-size: 20px;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  letter-spacing: 0;
+  text-align: left;
+}
+
+#workshop main article img {
+  margin-bottom: 60px;
+}
+
+#workshop main section .box {
+  margin-bottom: 60px;
+}
+
+#workshop main section .sub_box p {
+  line-height: 30px;
+  text-align: justify;
+}
+
+#workshop main section img:nth-child(even) {
+  margin-left: 50px;
+}
+
+#workshop main section img:nth-child(odd) {
+  margin-right: 50px;
+}
+
+#workshop main article:nth-child(3) p {
+  margin-bottom: 0;
+}
+
+
+
+
+
+/* -------------------- access -------------------- */
+
+#access main section {
+  width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#access main table tr {
+  height: 60px;
+}
+
+#access main table tr th {
+  font-size: 20px;
+  width: 20px;
+  padding-right: 20px;
+  padding-left: 30px;
+  vertical-align: middle;
+}
+
+#access main table tr td:nth-child(2) {
+  width: 130px;
+}
+
+#access main table tr td {
+  vertical-align: middle;
+}
+
+#access main table tr td a {
+  color: #43392F;
+  text-decoration: none;
+}
+
+#access main section p {
+  margin-top: 30px;
+}
+
+#access main section p a {
+  color: #43392F;
+}
+
+#access main section p a:hover {
+  color: #D09B2D;
+}
+
+#access main {
+  margin-bottom: 120px;
+}
+
+
+
+
+
+/* -------------------- contact -------------------- */
+
+#contact main form {
+  width: 750px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#contact main article p {
+  line-height: 30px;
+  margin-bottom: 100px;
+}
+
+#contact main table tr th {
+  text-align: left;
+  font-size: 20px;
+  font-weight: normal;
+  width: 200px;
+  height: 50px;
+  vertical-align: middle;
+}
+
+#contact main table tr .ms {
+  padding-top: 10px;
+  vertical-align: top;
+}
+
+#contact main form input {
+  width: 300px;
+  height: 30px;
+  background-color: #ccc;
+  border: none;
+}
+
+#contact main form textarea {
+  width: 500px;
+  height: 160px;
+  background-color: #ccc;
+  border: none;
+}
+
+#contact main table {
+  margin-left: 50px;
+  margin-bottom: 30px;
+}
+
+#contact main table tr td {
+  vertical-align: middle;
+}
+
+#contact main button {
+  height: 40px;
+  width: 150px;
+  font-size: 20px;
+  background-color: #D09B2D;
+  color: #FCFBF6;
+  border: none;
+  margin-bottom: 120px;
+  cursor: pointer;
+  /*カーソルをポインターへ*/
+  border-bottom: 2px solid #43392F;
+}
+
+#contact main .btn:hover {
+  margin-top: 2px;
+  border-bottom: 0;
+}
+
+
+
+
+
+
+
+
+
+
+/* --------------------- サイト幅1110px以下の場合 -------------------- */
+
+
+
+@media screen and (max-width: 1110px) {
+
+
+  /* ----- 共通 ----- */
+
+  .inner {
+    width: auto;
+  }
+
+  header {
+    width: auto;
+    display: block;
+  }
+
+  header nav {
+    margin: 30px 0;
+  }
+
+  header nav ul {
+    margin-left: 0px;
+  }
+
+  .slider img {
+    width: 100%;
+  }
+
+  main {
+    width: auto;
+  }
+
+  main figure img {
+    width: 100%;
+  }
+
+  main section .box {
+    display: block;
+  }
+
+  main article img {
+    width: 100%;
+  }
+
+  main article p {
+    margin-left: 30px;
+    margin-right: 30px;
+  }
+
+  footer {
+    width: 1110px;
+  }
+  footer .f_box {
+    margin-left: auto;
+    margin-right: auto;
+    justify-content: center;
+  }
+  footer .f_subbox p {
+    text-align: left;
+  }
+
+  footer nav ul li {
+    padding-right: 20px;
+  }
+
+
+
+  /* ----- Home ----- */
+
+  #home .left a {
+    margin-bottom: 30px;
+  }
+
+  #home main section .sub_box {
+    margin-right: 0;
+  }
+  
+  #home main section:nth-child(3) .sub_box {
+    margin-left: 0;
+  }
+  #home main .sub_box p {
+    text-align: center;
+  }
+
+  #home section .wrap {
+    display: block;
+    width: 320px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  #home main .wrapper {
+    margin-bottom: 60px;
+  }
+
+
+
+  /* ----- about ----- */
+
+  #about main .sub_box p {
+    margin-bottom: 30px;
+  }
+
+  #about main .box img {
+    width: 80%;
+  }
+
+  #about main section img {
+    margin-left: 0;
+  }
+
+
+  /* ----- workshop ----- */
+
+  #workshop main article h2 {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    background-position: center;
+  }
+
+  #workshop main .box {
+    display: block;
+    text-align: center;
+
+  }
+
+  #workshop main section {
+    width: 100%;
+  }
+
+  #workshop main section .sub_box {
+    margin-left: 30px;
+    margin-right: 30px;
+  }
+
+  #workshop main section img:nth-child(even) {
+    margin-left: 0px;
+    margin-top: 20px;
+  }
+
+  #workshop main section img:nth-child(odd) {
+    margin-right: 0px;
+
+  }
+
+
+  /* ----- access ----- */
+
+  #access main section {
+    width: 80%;
+  }
+
+  #access main iframe {
+    width: 100%;
+  }
+
+  #access main table td {
+    padding-top: 10px;
+  }
+
+
+  /* ----- contact ----- */
+
+  #contact main .form {
+    width: 60%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  #contact main table tr th {
+    font-size: 15px;
+    height: 30px;
+  }
+  #contact main table th, td {
+    display: block;
+  }
+
+  #contact main table td {
+    margin-bottom: 30px;
+  }
+
+  #contact main form textarea {
+    width: 450px;
+  }
+
+  #contact main form .btn {
+    text-align: left;
+    margin-left: 50px;
+  }
+  #contact main button {
+    font-size: 15px;
+  }
+
+
+
+}
+
+
+
+
+/* --------------------- サイト幅900px以下の場合 -------------------- */
+
+
+
+@media screen and (max-width: 900px) {
+
+  footer {
+    width: 900px;
+  }
+  footer .f_box {
+    display: block;
+    text-align: left;
+    width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  footer .f_subbox {
+    margin-left: 0;
+  }
+  footer .f_subbox:last-child {
+    margin-right: 0;
+  }
+
+}
+
+
+
+
+/* -------------------- サイト幅700px以下の場合 -------------------- */
+
+
+@media screen and (max-width: 700px) {
+
+
+  #contact main .form {
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  #contact main form textarea {
+    width: 350px;
+  }
+
+  footer {
+    width: 700px;
+  }
+
+}
+
+
+
+/* -------------------- サイト幅500px以下の場合 -------------------- */
+
+
+@media screen and (max-width: 500px) {
+
+
+
+  /* ----- 共通 ----- */
+
+  header h1 {
+    padding-left: 10px;
+    padding-right: 70px;
+  }
+
+  header h1 img {
+    width: 200px;
+  }
+
+  header nav {
+    display: none;
+  }
+
+  footer {
+    width: 500px;
+  }
+
+
+  /* ----- ハンバーガーメニュー ----- */
+  .hamburger-button {
+    display: flex;
+  }
+
+
+  /* ----- Home ----- */
+
+  #home main section .box img {
+    width: 100%;
+  }
+
+
+  /* ----- about ----- */
+
+  #about section main .box {
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+
+  /* ----- workshop ----- */
+
+  #workshop section .box img {
+    width: 100%;
+  }
+
+}
