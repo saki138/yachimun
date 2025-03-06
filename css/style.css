@@ -452,6 +452,7 @@ footer .f_subbox:last-child a {
   color: #FCFBF6;
   width: 1110px;
   line-height: 100px;
+  margin: 0 auto;
 }
 
 #workshop main section {
